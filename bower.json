@@ -1,0 +1,30 @@
+{
+  "name": "bubble-chart",
+  "version": "0.0.1",
+  "main": "src/bubble-chart.js",
+  "authors": [
+    "Phuong H <phuonghqh@gmail.com>"
+  ],
+  "description": "Bubble chart using d3js",
+  "keywords": [
+    "javascript",
+    "chart",
+    "bubble"
+  ],
+  "license": "http://opensource.org/licenses/MIT",
+  "homepage": "https://github.com/phuonghuynh/bubble-chart",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "d3": "latest",
+    "d3-transform": "latest",
+    "extarray": "latest",
+    "microplugin": "latest"
+  }
+}
