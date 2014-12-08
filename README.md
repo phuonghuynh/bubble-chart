@@ -1,4 +1,7 @@
 bubble-chart
 ============
 
-Bubble chart using d3js
+Bubble Chart using d3js
+
+##Dependencies
+ - See `bower.json`

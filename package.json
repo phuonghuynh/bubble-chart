@@ -6,6 +6,7 @@
     "grunt-cli": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-bower-install-simple": "latest"
+    "grunt-bower-install-simple": "latest",
+    "grunt-jsdoc-to-markdown": "latest"
   }
 }
