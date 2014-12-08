@@ -33,17 +33,17 @@
    * @param {number} [options.transitDuration=1000] - Duration of transition when do animations, in mili-seconds
    * @param {object} options.data - Data information
    * @param {object[]} options.data.items - Array of items <br/> Example
-   * ```js
+   *    ```js
    * [{number: 179, label: "something"}, {number: 220, label: "everything"}]
-   * ```
+   *    ```
    * @param {function} options.data.eval - Function should return a number used to evaluate an item <br/> Example
-   * ```js
+   *    ```js
    * function(d){return d.number;}
-   * ```
+   *    ```
    * @param {function} [options.data.color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
-   * ```js
+   *    ```js
    * function(d){return "white";}
-   * ```
+   *    ```
    * @this BubbleChart
    */
   var BubbleChart = function (opts) {

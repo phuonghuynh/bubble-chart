@@ -25,17 +25,17 @@ Bubble Chart implementation using `d3js.org`
   - \[transitDuration=1000\] `number` - Duration of transition when do animations, in mili-seconds  
   - data `object` - Data information  
   - items `Array.<object>` - Array of items <br/> Example
-```js
+   ```js
 [{number: 179, label: "something"}, {number: 220, label: "everything"}]
-```  
+   ```  
   - eval `function` - Function should return a number used to evaluate an item <br/> Example
-```js
+   ```js
 function(d){return d.number;}
-```  
+   ```  
   - \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
-```js
+   ```js
 function(d){return "white";}
-```  
+   ```  
 
 **Example**  
 - [test-bubble-chart](../test/test-bubble-chart.html)
