@@ -221,6 +221,7 @@
  *
  * @typedef {object} settings
  * @default
+ * ```js
  *    plugins: undefined,
  *    container: ".bubbleChart",
  *    viewBoxSize: size,
@@ -231,6 +232,7 @@
  *    intersectDelta: 0,
  *    intersectInc: intersectDelta,
  *    transitDuration: 1000
+ * ```
  *
  * @param {(object[]|string[])} plugins - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)
  * @param {string} [container=".bubbleChart"] - Jquery selector which will contain the chart
@@ -250,15 +252,15 @@
  *
  * @typedef {object} data
  * @param {object[]} items - Array of items <br/> Example
- *    ```js
- *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
- *    ```
+ * ```js
+ * [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+ * ```
  * @param {function} eval - Function should return a number used to evaluate an item <br/> Example
- *    ```js
- *    function(d){return d.number;}
- *    ```
+ * ``js
+ * function(d){return d.number;}
+ * ```
  * @param {function} [color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
- *    ```js
- *    function(d){return "white";}
- *    ```
+ * ```js
+ * function(d){return "white";}
+ * ```
  */

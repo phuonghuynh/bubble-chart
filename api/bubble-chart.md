@@ -48,7 +48,8 @@ Settings of bubble chart
 - data <code>[data](#data)</code> - Data information  
 
 **Type**: `object`  
-**Default**: `plugins: undefined,
+**Default**: ````js
+   plugins: undefined,
    container: ".bubbleChart",
    viewBoxSize: size,
    innerRadius: size/3,
@@ -57,7 +58,8 @@ Settings of bubble chart
    radiusMax: (outerRadius  innerRadius)/2,
    intersectDelta: 0,
    intersectInc: intersectDelta,
-   transitDuration: 1000`  
+   transitDuration: 1000
+````  
 <a name="data"></a>
 #type: data
 Data information
@@ -65,16 +67,16 @@ Data information
 **Params**
 
 - items `Array.<object>` - Array of items <br/> Example
-   ```js
-   [{number: 179, label: "something"}, {number: 220, label: "everything"}]
-   ```  
+```js
+[{number: 179, label: "something"}, {number: 220, label: "everything"}]
+```  
 - eval `function` - Function should return a number used to evaluate an item <br/> Example
-   ```js
-   function(d){return d.number;}
-   ```  
+``js
+function(d){return d.number;}
+```  
 - \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
-   ```js
-   function(d){return "white";}
-   ```  
+```js
+function(d){return "white";}
+```  
 
 **Type**: `object`  
