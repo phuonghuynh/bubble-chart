@@ -240,14 +240,14 @@
  * @typedef {object} data
  * @param {object[]} items - Array of items <br/> Example
  *  ```js
- *  [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+ *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
  *  ```
  * @param {function} eval - Function should return a number used to evaluate an item <br/> Example
- *  ``js
- *  function(d){return d.number;}
+ *  ```js
+ *    function(d){return d.number;}
  *  ```
  * @param {function} [color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
  *  ```js
- *  function(d){return "white";}
+ *    function(d){return "white";}
  *  ```
  */
