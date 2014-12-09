@@ -1,6 +1,6 @@
 {
   "name": "bubble-chart",
-  "version": "0.0.1",
+  "version": "1.0",
   "main": "src/bubble-chart.js",
   "authors": [
     "Phuong H <phuonghqh@gmail.com>"
