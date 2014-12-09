@@ -52,7 +52,7 @@ Settings of bubble chart
 #type: data
 Data information
 
-**Params**
+**Properties**
 
 - items `Array.<object>` - Array of items <br/> Example
  ```js
@@ -62,7 +62,7 @@ Data information
 ```js
 function(d){return d.number;}
 ```  
-- \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
+- color `function` - Function should return a string used to fill bubbles <br/>Example
 ```js
 function(d){return "white";}
 ```  
