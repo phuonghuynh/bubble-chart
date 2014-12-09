@@ -52,17 +52,17 @@ Settings of bubble chart
 #type: data
 Data information
 
-**Properties**
+**Params**
 
 - items `Array.<object>` - Array of items <br/> Example
- ```js
- [{number: 179, label: "something"}, {number: 220, label: "everything"}]
- ```  
+```js
+[{number: 179, label: "something"}, {number: 220, label: "everything"}]
+```  
 - eval `function` - Function should return a number used to evaluate an item <br/> Example
 ```js
 function(d){return d.number;}
 ```  
-- color `function` - Function should return a string used to fill bubbles <br/>Example
+- \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
 ```js
 function(d){return "white";}
 ```  
