@@ -56,15 +56,15 @@ Data information
 
 - items `Array.<object>` - Array of items <br/> Example
  ```js
-   [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+ [{number: 179, label: "something"}, {number: 220, label: "everything"}]
  ```  
 - eval `function` - Function should return a number used to evaluate an item <br/> Example
- ```js
-   function(d){return d.number;}
- ```  
+```js
+function(d){return d.number;}
+```  
 - \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
- ```js
-   function(d){return "white";}
- ```  
+```js
+function(d){return "white";}
+```  
 
 **Type**: `object`  
