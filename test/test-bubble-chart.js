@@ -33,11 +33,12 @@ $(document).ready(function () {
           style: {
             "font-size": "12px",
             "font-style": "italic",
-            "font-family": "roboto,arial",
+            "font-family": "Source Sans Pro, sans-serif",
+            //"font-weight": "700",
             "text-anchor": "middle",
             "fill": "white"
           },
-          attr: {dy: "70px"},
+          attr: {dy: "65px"},
           centralClick: function() {
             alert("Here is more details!!");
           }
@@ -51,8 +52,8 @@ $(document).ready(function () {
               textField: "count",
               classed: {count: true},
               style: {
-                "font-size": "20px",
-                "font-family": "roboto,arial",
+                "font-size": "28px",
+                "font-family": "Source Sans Pro, sans-serif",
                 "text-anchor": "middle",
                 fill: "white"
               },
@@ -66,10 +67,9 @@ $(document).ready(function () {
               textField: "text",
               classed: {text: true},
               style: {
-                "font-size": "16px",
-                "font-family": "roboto,arial",
+                "font-size": "14px",
+                "font-family": "Source Sans Pro, sans-serif",
                 "text-anchor": "middle",
-                "font-weight": "300px",
                 fill: "white"
               },
               attr: {
@@ -81,12 +81,12 @@ $(document).ready(function () {
           ],
           centralFormat: [
             {// Line #0
-              style: {"font-size": "45px"},
+              style: {"font-size": "50px"},
               attr: {}
             },
             {// Line #1
               style: {"font-size": "30px"},
-              attr: {dy: "48px"}
+              attr: {dy: "40px"}
             }
           ]
         }

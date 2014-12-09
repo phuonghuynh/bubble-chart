@@ -1,42 +1,80 @@
+#Index
+
+**Classes**
+
+* [class: BubbleChart](#BubbleChart)
+  * [new BubbleChart(settings)](#new_BubbleChart)
+
+**Typedefs**
+
+* [type: settings](#settings)
+* [type: data](#data)
+ 
 <a name="BubbleChart"></a>
 #class: BubbleChart
 **Members**
 
 * [class: BubbleChart](#BubbleChart)
-  * [new BubbleChart(options)](#new_BubbleChart)
+  * [new BubbleChart(settings)](#new_BubbleChart)
 
 <a name="new_BubbleChart"></a>
-##new BubbleChart(options)
+##new BubbleChart(settings)
 Bubble Chart implementation using `d3js.org`
 
 **Params**
 
-- options `object` - Settings of bubble chart  
-  - plugins `Array.<object>` | `Array.<string>` - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)  
-  - \[container=".bubbleChart"\] `string` - Jquery selector which will contain the chart  
-  - size `number` - Size of the chart, in pixel  
-  - \[viewBoxSize=options.size\] `number` - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)  
-  - \[innerRadius=options.size/3\] `number` - Radius of the Inner Circle, in pixel  
-  - \[outerRadius=options.size/2\] `number` - Radius of the Outer Circle, in pixel  
-  - \[radiusMin=options.size/10\] `number` - Minimum radius, in pixel,  
-  - \[radiusMax=(options.outerRadius - options.innerRadius)/2\] `number` - Maximum radius, in pixel  
-  - \[intersectDelta=0\] `number` - Intersection between circles, in pixel  
-  - \[intersectInc=options.intersectDelta\] `number` - Increment of options.intersectDelta, in pixel  
-  - \[transitDuration=1000\] `number` - Duration of transition when do animations, in mili-seconds  
-  - data `object` - Data information  
-  - items `Array.<object>` - Array of items <br/> Example
-   ```js
-[{number: 179, label: "something"}, {number: 220, label: "everything"}]
-   ```  
-  - eval `function` - Function should return a number used to evaluate an item <br/> Example
-   ```js
-function(d){return d.number;}
-   ```  
-  - \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
-   ```js
-function(d){return "white";}
-   ```  
+- settings <code>[settings](#settings)</code> - Settings of bubble chart  
 
 **Example**  
 - [test-bubble-chart](../test/test-bubble-chart.html)
 
+<a name="settings"></a>
+#type: settings
+Settings of bubble chart
+
+**Properties**
+
+- plugins `Array.<object>` | `Array.<string>` - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)  
+- container `string` - Jquery selector which will contain the chart  
+- size `number` - Size of the chart, in pixel  
+- viewBoxSize `number` - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)  
+- innerRadius `number` - Radius of the Inner Circle, in pixel  
+- outerRadius `number` - Radius of the Outer Circle, in pixel  
+- radiusMin `number` - Minimum radius, in pixel,  
+- radiusMax `number` - Maximum radius, in pixel  
+- intersectDelta `number` - Intersection between circles, in pixel  
+- intersectInc `number` - Increment of settings.intersectDelta, in pixel  
+- transitDuration `number` - Duration of transition when do animations, in mili-seconds  
+- data <code>[data](#data)</code> - Data information  
+
+**Type**: `object`  
+**Default**: `plugins: undefined,
+   container: ".bubbleChart",
+   viewBoxSize: size,
+   innerRadius: size/3,
+   outerRadius: size/2,
+   radiusMin: size/10,
+   radiusMax: (outerRadius  innerRadius)/2,
+   intersectDelta: 0,
+   intersectInc: intersectDelta,
+   transitDuration: 1000`  
+<a name="data"></a>
+#type: data
+Data information
+
+**Properties**
+
+- items `Array.<object>` - Array of items <br/> Example
+   ```js
+   [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+   ```  
+- eval `function` - Function should return a number used to evaluate an item <br/> Example
+   ```js
+   function(d){return d.number;}
+   ```  
+- color `function` - Function should return a string used to fill bubbles <br/>Example
+   ```js
+   function(d){return "white";}
+   ```  
+
+**Type**: `object`  

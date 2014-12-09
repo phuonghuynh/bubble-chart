@@ -11,7 +11,6 @@
 }(this, function (MicroPlugin) {
   var options = {};
   var pi2 = Math.PI * 2;
-
   /**
    * Bubble Chart implementation using {@link d3js.org|d3js}
    *
@@ -19,39 +18,14 @@
    * @example
    *  - [test-bubble-chart](../test/test-bubble-chart.html)
    *
-   * @param {object} options - Settings of bubble chart
-   * @param {object[]|string[]} options.plugins - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)
-   * @param {string} [options.container=".bubbleChart"] - Jquery selector which will contain the chart
-   * @param {number} options.size - Size of the chart, in pixel
-   * @param {number} [options.viewBoxSize=options.size] - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
-   * @param {number} [options.innerRadius=options.size/3] - Radius of the Inner Circle, in pixel
-   * @param {number} [options.outerRadius=options.size/2] - Radius of the Outer Circle, in pixel
-   * @param {number} [options.radiusMin=options.size/10] - Minimum radius, in pixel,
-   * @param {number} [options.radiusMax=(options.outerRadius - options.innerRadius)/2] - Maximum radius, in pixel
-   * @param {number} [options.intersectDelta=0] - Intersection between circles, in pixel
-   * @param {number} [options.intersectInc=options.intersectDelta] - Increment of options.intersectDelta, in pixel
-   * @param {number} [options.transitDuration=1000] - Duration of transition when do animations, in mili-seconds
-   * @param {object} options.data - Data information
-   * @param {object[]} options.data.items - Array of items <br/> Example
-   *    ```js
-   *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
-   *    ```
-   * @param {function} options.data.eval - Function should return a number used to evaluate an item <br/> Example
-   *    ```js
-   *    function(d){return d.number;}
-   *    ```
-   * @param {function} [options.data.color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
-   *    ```js
-   *    function(d){return "white";}
-   *    ```
-   * @this BubbleChart
+   * @param {settings} settings - Settings of bubble chart
    */
-  d3.svg.BubbleChart = function (opts) {
+  d3.svg.BubbleChart = function (settings) {
     var self = this;
-    var defaultViewBoxSize = opts.size;
-    var defaultInnerRadius = opts.size / 3;
-    var defaultOuterRadius = opts.size / 2;
-    var defaultRadiusMin = opts.size / 10;
+    var defaultViewBoxSize = settings.size;
+    var defaultInnerRadius = settings.size / 3;
+    var defaultOuterRadius = settings.size / 2;
+    var defaultRadiusMin = settings.size / 10;
 
     $.extend(options, {
       plugins: [],
@@ -62,12 +36,12 @@
       radiusMin: defaultRadiusMin,
       intersectDelta: 0,
       transitDuration: 1000
-    }, opts);
+    }, settings);
 
     $.extend(options, {
       radiusMax: (options.outerRadius - options.innerRadius) / 2,
       intersectInc: options.intersectDelta
-    }, opts);
+    }, settings);
 
     self.initializePlugins(options.plugins);
 
@@ -242,3 +216,49 @@
 
   return d3.svg.BubbleChart;
 }));
+/**
+ * Settings of bubble chart
+ *
+ * @typedef {object} settings
+ * @default
+ *    plugins: undefined,
+ *    container: ".bubbleChart",
+ *    viewBoxSize: size,
+ *    innerRadius: size/3,
+ *    outerRadius: size/2,
+ *    radiusMin: size/10,
+ *    radiusMax: (outerRadius  innerRadius)/2,
+ *    intersectDelta: 0,
+ *    intersectInc: intersectDelta,
+ *    transitDuration: 1000
+ *
+ * @property {(object[]|string[])} plugins - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)
+ * @property {string} container - Jquery selector which will contain the chart
+ * @property {number} size - Size of the chart, in pixel
+ * @property {number} [viewBoxSize=size] - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
+ * @property {number} [innerRadius=size/3] - Radius of the Inner Circle, in pixel
+ * @property {number} [outerRadius=size/2] - Radius of the Outer Circle, in pixel
+ * @property {number} [radiusMin=size/10] - Minimum radius, in pixel,
+ * @property {number} [radiusMax=(outerRadius  innerRadius)/2] - Maximum radius, in pixel
+ * @property {number} [intersectDelta=0] - Intersection between circles, in pixel
+ * @property {number} [intersectInc=intersectDelta] - Increment of settings.intersectDelta, in pixel
+ * @property {number} [transitDuration=1000] - Duration of transition when do animations, in mili-seconds
+ * @property {data} data - Data information
+ */
+/**
+ * Data information
+ *
+ * @typedef {object} data
+ * @property {object[]} items - Array of items <br/> Example
+ *    ```js
+ *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+ *    ```
+ * @property {function} eval - Function should return a number used to evaluate an item <br/> Example
+ *    ```js
+ *    function(d){return d.number;}
+ *    ```
+ * @property {function} [color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
+ *    ```js
+ *    function(d){return "white";}
+ *    ```
+ */
