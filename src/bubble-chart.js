@@ -234,6 +234,7 @@
  * @param {number} [transitDuration=1000] - Duration of transition when do animations, in mili-seconds
  * @param {data} data - Data information
  */
+
 /**
  * Data information
  *
