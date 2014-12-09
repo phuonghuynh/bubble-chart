@@ -34,19 +34,19 @@
    * @param {object} options.data - Data information
    * @param {object[]} options.data.items - Array of items <br/> Example
    *    ```js
-   * [{number: 179, label: "something"}, {number: 220, label: "everything"}]
+   *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
    *    ```
    * @param {function} options.data.eval - Function should return a number used to evaluate an item <br/> Example
    *    ```js
-   * function(d){return d.number;}
+   *    function(d){return d.number;}
    *    ```
    * @param {function} [options.data.color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
    *    ```js
-   * function(d){return "white";}
+   *    function(d){return "white";}
    *    ```
    * @this BubbleChart
    */
-  var BubbleChart = function (opts) {
+  d3.svg.BubbleChart = function (opts) {
     var self = this;
     var defaultViewBoxSize = opts.size;
     var defaultInnerRadius = opts.size / 3;
@@ -86,7 +86,7 @@
   var centralNode;
   var clickedNode;
 
-  $.extend(BubbleChart.prototype, {
+  $.extend(d3.svg.BubbleChart.prototype, {
     getClickedNode: function () {
       return clickedNode;
     },
@@ -238,7 +238,7 @@
     }
   });
 
-  MicroPlugin.mixin(BubbleChart);
+  MicroPlugin.mixin(d3.svg.BubbleChart);
 
-  return BubbleChart;
+  return d3.svg.BubbleChart;
 }));

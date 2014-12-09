@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var bubbleChart = new BubbleChart({
+  var bubbleChart = new d3.svg.BubbleChart({
     //container: => use @default
     size: 600,
     //viewBoxSize: => use @default

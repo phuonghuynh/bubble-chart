@@ -13,7 +13,7 @@
  *
  * @author Phuong Huynh <phuonghqh@gmail.com>
  */
-BubbleChart.define("central-click", function (options) {
+d3.svg.BubbleChart.define("central-click", function (options) {
   var self = this;
 
   self.reset = (function (node) {

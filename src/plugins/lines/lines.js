@@ -13,7 +13,7 @@
  *
  * @author Phuong Huynh <phuonghqh@gmail.com>
  */
-BubbleChart.define("lines", function (options) {
+d3.svg.BubbleChart.define("lines", function (options) {
   /*
    * @param
    *  options = {
