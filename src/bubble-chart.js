@@ -232,32 +232,32 @@
  *    intersectInc: intersectDelta,
  *    transitDuration: 1000
  *
- * @property {(object[]|string[])} plugins - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)
- * @property {string} container - Jquery selector which will contain the chart
- * @property {number} size - Size of the chart, in pixel
- * @property {number} [viewBoxSize=size] - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
- * @property {number} [innerRadius=size/3] - Radius of the Inner Circle, in pixel
- * @property {number} [outerRadius=size/2] - Radius of the Outer Circle, in pixel
- * @property {number} [radiusMin=size/10] - Minimum radius, in pixel,
- * @property {number} [radiusMax=(outerRadius  innerRadius)/2] - Maximum radius, in pixel
- * @property {number} [intersectDelta=0] - Intersection between circles, in pixel
- * @property {number} [intersectInc=intersectDelta] - Increment of settings.intersectDelta, in pixel
- * @property {number} [transitDuration=1000] - Duration of transition when do animations, in mili-seconds
- * @property {data} data - Data information
+ * @param {(object[]|string[])} plugins - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)
+ * @param {string} [container=".bubbleChart"] - Jquery selector which will contain the chart
+ * @param {number} size - Size of the chart, in pixel
+ * @param {number} [viewBoxSize=size] - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
+ * @param {number} [innerRadius=size/3] - Radius of the Inner Circle, in pixel
+ * @param {number} [outerRadius=size/2] - Radius of the Outer Circle, in pixel
+ * @param {number} [radiusMin=size/10] - Minimum radius, in pixel,
+ * @param {number} [radiusMax=(outerRadius  innerRadius)/2] - Maximum radius, in pixel
+ * @param {number} [intersectDelta=0] - Intersection between circles, in pixel
+ * @param {number} [intersectInc=intersectDelta] - Increment of settings.intersectDelta, in pixel
+ * @param {number} [transitDuration=1000] - Duration of transition when do animations, in mili-seconds
+ * @param {data} data - Data information
  */
 /**
  * Data information
  *
  * @typedef {object} data
- * @property {object[]} items - Array of items <br/> Example
+ * @param {object[]} items - Array of items <br/> Example
  *    ```js
  *    [{number: 179, label: "something"}, {number: 220, label: "everything"}]
  *    ```
- * @property {function} eval - Function should return a number used to evaluate an item <br/> Example
+ * @param {function} eval - Function should return a number used to evaluate an item <br/> Example
  *    ```js
  *    function(d){return d.number;}
  *    ```
- * @property {function} [color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
+ * @param {function} [color=d3.scale.category20] - Function should return a string used to fill bubbles <br/>Example
  *    ```js
  *    function(d){return "white";}
  *    ```

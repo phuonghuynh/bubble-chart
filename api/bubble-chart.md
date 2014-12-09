@@ -32,19 +32,19 @@ Bubble Chart implementation using `d3js.org`
 #type: settings
 Settings of bubble chart
 
-**Properties**
+**Params**
 
 - plugins `Array.<object>` | `Array.<string>` - Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)  
-- container `string` - Jquery selector which will contain the chart  
+- \[container=".bubbleChart"\] `string` - Jquery selector which will contain the chart  
 - size `number` - Size of the chart, in pixel  
-- viewBoxSize `number` - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)  
-- innerRadius `number` - Radius of the Inner Circle, in pixel  
-- outerRadius `number` - Radius of the Outer Circle, in pixel  
-- radiusMin `number` - Minimum radius, in pixel,  
-- radiusMax `number` - Maximum radius, in pixel  
-- intersectDelta `number` - Intersection between circles, in pixel  
-- intersectInc `number` - Increment of settings.intersectDelta, in pixel  
-- transitDuration `number` - Duration of transition when do animations, in mili-seconds  
+- \[viewBoxSize=size\] `number` - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)  
+- \[innerRadius=size/3\] `number` - Radius of the Inner Circle, in pixel  
+- \[outerRadius=size/2\] `number` - Radius of the Outer Circle, in pixel  
+- \[radiusMin=size/10\] `number` - Minimum radius, in pixel,  
+- \[radiusMax=(outerRadius  innerRadius)/2\] `number` - Maximum radius, in pixel  
+- \[intersectDelta=0\] `number` - Intersection between circles, in pixel  
+- \[intersectInc=intersectDelta\] `number` - Increment of settings.intersectDelta, in pixel  
+- \[transitDuration=1000\] `number` - Duration of transition when do animations, in mili-seconds  
 - data <code>[data](#data)</code> - Data information  
 
 **Type**: `object`  
@@ -62,7 +62,7 @@ Settings of bubble chart
 #type: data
 Data information
 
-**Properties**
+**Params**
 
 - items `Array.<object>` - Array of items <br/> Example
    ```js
@@ -72,7 +72,7 @@ Data information
    ```js
    function(d){return d.number;}
    ```  
-- color `function` - Function should return a string used to fill bubbles <br/>Example
+- \[color=d3.scale.category20\] `function` - Function should return a string used to fill bubbles <br/>Example
    ```js
    function(d){return "white";}
    ```  
