@@ -1,4 +1,29 @@
-#Index
+bubble-chart
+============
+Bubble Chart implementation using [d3js](http://d3js.org)
+
+##Usage
+```js
+var bubbleChart = new d3.svg.BubbleChart(settings);
+```
+###Settings
+Property   | Type  | Description  | Required | Default   
+:----------|:------|:-------------|:--------:|-----------
+`plugins`  | `object[]` or `string[]`  | Array of plugin [microplugin](https://github.com/brianreavis/microplugin.js|microplugin)|          |           
+`container`  | `string`  | Jquery selector which will contain the chart |          | ".bubbleChart" 
+`size`  | `number`  | Size of the chart, in pixel | * |  
+`viewBoxSize`  | `number`  | Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute) |  | `= size` 
+`innerRadius`  | `number`  | Radius of the Inner Circle, in pixel |  | `= size/3` 
+`outerRadius`  | `number`  | Radius of the Outer Circle, in pixel |  | `= size/2` 
+`radiusMin`  | `number`  | Minimum radius, in pixel |  | `= size/10` 
+`radiusMax`  | `number`  | Maximum radius, in pixel |  | `= (outerRadius  innerRadius)/2` 
+`intersectDelta`  | `number`  | Intersection between circles, in pixel |  | `= 0` 
+
+
+##Example
+- See [test-bubble-chart](src/test/test-bubble-chart.html)
+
+
 
 **Classes**
 

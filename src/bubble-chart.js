@@ -227,7 +227,7 @@
  * @param {number} [viewBoxSize=size] - Size of the viewport of the chart, in pixel [ViewBoxAttribute](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
  * @param {number} [innerRadius=size/3] - Radius of the Inner Circle, in pixel
  * @param {number} [outerRadius=size/2] - Radius of the Outer Circle, in pixel
- * @param {number} [radiusMin=size/10] - Minimum radius, in pixel,
+ * @param {number} [radiusMin=size/10] - Minimum radius, in pixel
  * @param {number} [radiusMax=(outerRadius  innerRadius)/2] - Maximum radius, in pixel
  * @param {number} [intersectDelta=0] - Intersection between circles, in pixel
  * @param {number} [intersectInc=intersectDelta] - Increment of settings.intersectDelta, in pixel
