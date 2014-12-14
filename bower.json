@@ -1,7 +1,7 @@
 {
   "name": "bubble-chart",
   "version": "1.0",
-  "main": "src/bubble-chart.js",
+  "main": ["src/bubble-chart.js", "plugins/lines/lines.js", "plugins/central-click/central-click.js"],
   "authors": [
     "Phuong H <phuonghqh@gmail.com>"
   ],
