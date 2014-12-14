@@ -20,7 +20,7 @@ $(document).ready(function () {
         {text: "Python", count: "170"},
         {text: "C/C++", count: "382"},
         {text: "Pascal", count: "10"},
-        {text: "A very very very long text", count: "170"},
+        {text: "Something", count: "170"},
       ],
       eval: function (item) {return item.count;},
       classed: function (item) {return item.text.split(" ").join("");}

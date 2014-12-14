@@ -44,18 +44,25 @@ module.exports = function (grunt) {
     },
 
     jsdoc2md: {
-    main: {
-      files: [
-        {src: "src/bubble-chart.js", dest: "api/bubble-chart.md"},
-      ]
+      main: {
+        files: [
+          {
+            cwd: "src",
+            expand: true,
+            src: ["**/*.js"],
+            dest: "api",
+            ext: '.md'
+          }
+        ]
+      }
     }
-  }
   });
 
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-bower-install-simple");
   grunt.loadNpmTasks("grunt-jsdoc-to-markdown");
+  grunt.loadNpmTasks("grunt-jsdox");
 
   // start a http server and serve at folder "test"
   grunt.registerTask("default", ["bower-install-simple", "connect", "watch"]);

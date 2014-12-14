@@ -24,7 +24,7 @@
     "jquery": "latest",
     "d3": "latest",
     "d3-transform": "latest",
-    "extarray": "latest",
+    "cafej": "latest",
     "microplugin": "latest"
   }
 }
