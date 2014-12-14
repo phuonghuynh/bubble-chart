@@ -2,6 +2,9 @@ bubble-chart
 ============
 Bubble Chart using d3js
 
+##Demo
+See [demo](http://phuonghuynh.github.io/javascript/d3js/2014/12/14/bubble-chart.html)
+
 ##Usage
 1. To install: `bower install bubble-chart`
 2. To initialize & configure, see example [`test-bubble-chart.js`](test/test-bubble-chart.js)
