@@ -144,6 +144,15 @@
 
       self.transition = {};
       self.event = $.microObserver.get($.misc.uuid());
+
+      if (options.supportResponsive) {
+        $(window).resize(function() {
+          var width = $(options.container).width();
+          self.svg.attr("width", width);
+          self.svg.attr("height", width);
+        });
+        $(window).resize();
+      }
     },
 
     getCirclePositions: function () {
