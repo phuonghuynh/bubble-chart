@@ -14,7 +14,7 @@ d3.svg.BubbleChart.define("central-click", function (options) {
             && node.datum) {
           var nodeDatum = node.datum();
           if (nodeDatum.item) {
-            options.centralClick(node.datum().item);
+            options.centralClick(nodeDatum.item);
           }
         }
       });
