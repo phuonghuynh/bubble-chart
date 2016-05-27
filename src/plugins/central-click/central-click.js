@@ -9,8 +9,13 @@ d3.svg.BubbleChart.define("central-click", function (options) {
     return function (node) {
       var fn = original.apply(this, arguments);
       self.event.on("click", function(node) {
-        if (node.selectAll("text.central-click")[0].length === 1) {
-          alert("Hello there!\nCentral bubble is clicked.");
+        if (node.selectAll("text.central-click")[0].length === 1
+            && options.centralClick
+            && node.datum) {
+          var nodeDatum = node.datum();
+          if (nodeDatum.item) {
+            options.centralClick(node.datum().item);
+          }
         }
       });
       return fn;
