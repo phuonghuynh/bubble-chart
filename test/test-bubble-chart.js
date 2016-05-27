@@ -40,8 +40,8 @@ $(document).ready(function () {
             "fill": "white"
           },
           attr: {dy: "65px"},
-          centralClick: function() {
-            alert("Here is more details!!");
+          centralClick: function(item) {
+            alert("Here is more details: " + item.text + "!!");
           }
         }
       },
