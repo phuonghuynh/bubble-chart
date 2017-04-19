@@ -1,7 +1,7 @@
 /**
  * central-click.js
  */
-d3.svg.BubbleChart.define("central-click", function (options) {
+ d3.svg.BubbleChart.define("central-click", function (options) {
   var self = this;
 
   self.setup = (function (node) {
@@ -9,15 +9,13 @@ d3.svg.BubbleChart.define("central-click", function (options) {
     return function (node) {
       var fn = original.apply(this, arguments);
       self.event.on("click", function(node) {
-        if (node.selectAll("text.central-click")[0].length === 1
-            && options.centralClick
-            && node.datum) {
+        if (node.selectAll("text.central-click")[0].length === 1 && options.centralClick && node.datum) {
           var nodeDatum = node.datum();
-          if (nodeDatum.item) {
-            options.centralClick(nodeDatum.item);
-          }
+        if (nodeDatum.item) {
+          options.centralClick(nodeDatum.item);
         }
-      });
+      }
+    });
       return fn;
     };
   })();
@@ -38,12 +36,12 @@ d3.svg.BubbleChart.define("central-click", function (options) {
       var transition = self.getTransition().centralNode;
       transition.each("end", function() {
         node.append("text").classed({"central-click": true})
-          .attr(options.attr)
-          .style(options.style)
-          .attr("x", function (d) {return d.cx;})
-          .attr("y", function (d) {return d.cy;})
-          .text(options.text)
-          .style("opacity", 0).transition().duration(self.getOptions().transitDuration / 2).style("opacity", "0.8");
+        .attr(options.attr)
+        .style(options.style)
+        .attr("x", function (d) {return d.cx;})
+        .attr("y", function (d) {return d.cy;})
+        .text(options.text)
+        .style("opacity", 0).transition().duration(self.getOptions().transitDuration / 2).style("opacity", "0.8");
       });
       return fn;
     };
