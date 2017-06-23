@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "jquery": "latest",
-    "d3": "latest",
+    "d3": "3.5.17",
     "d3-transform": "latest",
     "cafej": "latest",
     "microplugin": "latest"

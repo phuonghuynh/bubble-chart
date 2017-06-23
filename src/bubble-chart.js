@@ -19,7 +19,7 @@
    *
    * @param {settings} settings - Settings of bubble chart
    */
-  d3.svg.BubbleChart = function (settings) {
+   d3.svg.BubbleChart = function (settings) {
     var self = this;
     var defaultViewBoxSize = settings.size;
     var defaultInnerRadius = settings.size / 3;
@@ -99,7 +99,7 @@
           throw {
             message: "Not enough space for all bubble. Please change the options.",
             options: options
-          }
+          };
         }
         return self.randomCirclesPositions(delta + options.intersectInc);
       }
@@ -124,22 +124,22 @@
       self.values = self.getValues();
       self.valueMax = self.values.max();
       self.svg = d3.select(options.container).append("svg")
-        .attr({preserveAspectRatio: "xMidYMid", width: options.size, height: options.size, class: "bubbleChart"})
-        .attr("viewBox", function (d) {return ["0 0", options.viewBoxSize, options.viewBoxSize].join(" ")});
+      .attr({preserveAspectRatio: "xMidYMid", width: options.size, height: options.size, class: "bubbleChart"})
+      .attr("viewBox", function (d) {return ["0 0", options.viewBoxSize, options.viewBoxSize].join(" ");});
       self.circlePositions = self.randomCirclesPositions(options.intersectDelta);
 
       var node = self.svg.selectAll(".node")
-        .data(self.circlePositions)
-        .enter().append("g")
-        .attr("class", function (d) {return ["node", options.data.classed(d.item)].join(" ");});
+      .data(self.circlePositions)
+      .enter().append("g")
+      .attr("class", function (d) {return ["node", options.data.classed(d.item)].join(" ");});
 
       var fnColor = d3.scale.category20();
       node.append("circle")
-        .attr({r: function (d) {return d.r;}, cx: function (d) {return d.cx;}, cy: function (d) {return d.cy;}})
-        .style("fill", function (d) {
-          return options.data.color !== undefined ? options.data.color(d.item) : fnColor(d.item.text);
-        })
-        .attr("opacity", "0.8");
+      .attr({r: function (d) {return d.r;}, cx: function (d) {return d.cx;}, cy: function (d) {return d.cy;}})
+      .style("fill", function (d) {
+        return options.data.color !== undefined ? options.data.color(d.item) : fnColor(d.item.text);
+      })
+      .attr("opacity", "0.8");
       node.sort(function (a, b) {return options.data.eval(b.item) - options.data.eval(a.item);});
 
       self.transition = {};
@@ -162,35 +162,35 @@
     moveToCentral: function (node) {
       var self = this;
       var toCentralPoint = d3.svg.transform()
-        .translate(function (d) {
-          var cx = node.select('circle').attr("cx");
-          var dx = self.centralPoint - d.cx;
-          var dy = self.centralPoint - d.cy;
-          return [dx, dy];
-        });
+      .translate(function (d) {
+        var cx = node.select('circle').attr("cx");
+        var dx = self.centralPoint - d.cx;
+        var dy = self.centralPoint - d.cy;
+        return [dx, dy];
+      });
       self.centralNode = node;
       self.transition.centralNode = node.classed({active: true})
-        .transition().duration(self.options.transitDuration);
+      .transition().duration(self.options.transitDuration);
       self.transition.centralNode.attr('transform', toCentralPoint)
-        .select("circle")
-        .attr('r', function (d) {return self.options.innerRadius;});
+      .select("circle")
+      .attr('r', function (d) {return self.options.innerRadius;});
     },
 
     moveToReflection: function (node, swapped) {
       var self = this;
       var toReflectionPoint = d3.svg.transform()
-        .translate(function (d) {
-          var dx = 2 * (self.centralPoint - d.cx);
-          var dy = 2 * (self.centralPoint - d.cy);
-          return [dx, dy];
-        });
+      .translate(function (d) {
+        var dx = 2 * (self.centralPoint - d.cx);
+        var dy = 2 * (self.centralPoint - d.cy);
+        return [dx, dy];
+      });
 
       node.transition()
-        .duration(self.options.transitDuration)
-        .delay(function (d, i) {return i * 10;})
-        .attr('transform', swapped ? "" : toReflectionPoint)
-        .select("circle")
-        .attr('r', function (d) {return d.r;});
+      .duration(self.options.transitDuration)
+      .delay(function (d, i) {return i * 10;})
+      .attr('transform', swapped ? "" : toReflectionPoint)
+      .select("circle")
+      .attr('r', function (d) {return d.r;});
     },
 
     reset: function (node) {
@@ -220,9 +220,9 @@
     }
   });
 
-  MicroPlugin.mixin(d3.svg.BubbleChart);
+MicroPlugin.mixin(d3.svg.BubbleChart);
 
-  return d3.svg.BubbleChart;
+return d3.svg.BubbleChart;
 }));
 /**
  * Settings of bubble chart
