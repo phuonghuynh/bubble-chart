@@ -11,7 +11,7 @@
  * @param {string} options.format.attr - attribute used to apply to [text](http://www.w3.org/TR/SVG/text.html#TextElement)
  * @param {object[]} options.centralFormat - like #format but used to format central-bubble
  */
-d3.svg.BubbleChart.define("lines", function (options) {
+d3.svg.BubbleChart.define("lines", function(options) {
   /*
    * @param
    *  options = {
@@ -30,30 +30,38 @@ d3.svg.BubbleChart.define("lines", function (options) {
 
   var self = this;
 
-  self.setup = (function () {
+  self.setup = (function() {
     var original = self.setup;
-    return function () {
+    return function() {
       var fn = original.apply(this, arguments);
       var node = self.getNodes();
-      $.each(options.format, function (i, f) {
-        node.append("text")
+      $.each(options.format, function(i, f) {
+        node
+          .append("text")
           .classed(f.classed)
           .style(f.style)
           .attr(f.attr)
-          .text(function (d) {return d.item[f.textField];});
+          .text(function(d) {
+            return d.item[f.textField];
+          });
       });
       return fn;
     };
   })();
 
-  self.reset = (function (node) {
+  self.reset = (function(node) {
     var original = self.reset;
-    return function (node) {
+    return function(node) {
       var fn = original.apply(this, arguments);
-      $.each(options.format, function (i, f) {
+      $.each(options.format, function(i, f) {
         var tNode = d3.select(node.selectAll("text")[0][i]);
-        tNode.classed(f.classed).text(function (d) {return d.item[f.textField];})
-          .transition().duration(self.getOptions().transitDuration)
+        tNode
+          .classed(f.classed)
+          .text(function(d) {
+            return d.item[f.textField];
+          })
+          .transition()
+          .duration(self.getOptions().transitDuration)
           .style(f.style)
           .attr(f.attr);
       });
@@ -61,17 +69,22 @@ d3.svg.BubbleChart.define("lines", function (options) {
     };
   })();
 
-  self.moveToCentral = (function (node) {
+  self.moveToCentral = (function(node) {
     var original = self.moveToCentral;
-    return function (node) {
+    return function(node) {
       var fn = original.apply(this, arguments);
-      $.each(options.centralFormat, function (i, f) {
+      $.each(options.centralFormat, function(i, f) {
         var tNode = d3.select(node.selectAll("text")[0][i]);
-        tNode.transition().duration(self.getOptions().transitDuration)
+        tNode
+          .transition()
+          .duration(self.getOptions().transitDuration)
           .style(f.style)
           .attr(f.attr);
         f.classed !== undefined && tNode.classed(f.classed);
-        f.textField !== undefined && tNode.text(function (d) {return d.item[f.textField];});
+        f.textField !== undefined &&
+          tNode.text(function(d) {
+            return d.item[f.textField];
+          });
       });
       return fn;
     };

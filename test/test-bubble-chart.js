@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var bubbleChart = new d3.svg.BubbleChart({
     supportResponsive: true,
     //container: => use @default
@@ -13,18 +13,22 @@ $(document).ready(function () {
     //circleColor: use @default
     data: {
       items: [
-        {text: "Java", count: "236"},
-        {text: ".Net", count: "382"},
-        {text: "Php", count: "170"},
-        {text: "Ruby", count: "123"},
-        {text: "D", count: "12"},
-        {text: "Python", count: "170"},
-        {text: "C/C++", count: "382"},
-        {text: "Pascal", count: "10"},
-        {text: "Something", count: "170"},
+        { text: "Java", count: "236" },
+        { text: ".Net", count: "382" },
+        { text: "Php", count: "170" },
+        { text: "Ruby", count: "123" },
+        { text: "D", count: "12" },
+        { text: "Python", count: "170" },
+        { text: "C/C++", count: "382" },
+        { text: "Pascal", count: "10" },
+        { text: "Something", count: "170" }
       ],
-      eval: function (item) {return item.count;},
-      classed: function (item) {return item.text.split(" ").join("");}
+      eval: function(item) {
+        return item.count;
+      },
+      classed: function(item) {
+        return item.text.split(" ").join("");
+      }
     },
     plugins: [
       {
@@ -37,9 +41,9 @@ $(document).ready(function () {
             "font-family": "Source Sans Pro, sans-serif",
             //"font-weight": "700",
             "text-anchor": "middle",
-            "fill": "white"
+            fill: "white"
           },
-          attr: {dy: "65px"},
+          attr: { dy: "65px" },
           centralClick: function(item) {
             alert("Here is more details: " + item.text + "!!");
           }
@@ -49,9 +53,10 @@ $(document).ready(function () {
         name: "lines",
         options: {
           format: [
-            {// Line #0
+            {
+              // Line #0
               textField: "count",
-              classed: {count: true},
+              classed: { count: true },
               style: {
                 "font-size": "28px",
                 "font-family": "Source Sans Pro, sans-serif",
@@ -60,13 +65,18 @@ $(document).ready(function () {
               },
               attr: {
                 dy: "0px",
-                x: function (d) {return d.cx;},
-                y: function (d) {return d.cy;}
+                x: function(d) {
+                  return d.cx;
+                },
+                y: function(d) {
+                  return d.cy;
+                }
               }
             },
-            {// Line #1
+            {
+              // Line #1
               textField: "text",
-              classed: {text: true},
+              classed: { text: true },
               style: {
                 "font-size": "14px",
                 "font-family": "Source Sans Pro, sans-serif",
@@ -75,22 +85,29 @@ $(document).ready(function () {
               },
               attr: {
                 dy: "20px",
-                x: function (d) {return d.cx;},
-                y: function (d) {return d.cy;}
+                x: function(d) {
+                  return d.cx;
+                },
+                y: function(d) {
+                  return d.cy;
+                }
               }
             }
           ],
           centralFormat: [
-            {// Line #0
-              style: {"font-size": "50px"},
+            {
+              // Line #0
+              style: { "font-size": "50px" },
               attr: {}
             },
-            {// Line #1
-              style: {"font-size": "30px"},
-              attr: {dy: "40px"}
+            {
+              // Line #1
+              style: { "font-size": "30px" },
+              attr: { dy: "40px" }
             }
           ]
         }
-      }]
+      }
+    ]
   });
 });
