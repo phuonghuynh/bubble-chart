@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   grunt.initConfig({
     connect: {
       server: {
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             expand: true,
             src: ["**/*.js"],
             dest: "api",
-            ext: '.md'
+            ext: ".md"
           }
         ]
       }
